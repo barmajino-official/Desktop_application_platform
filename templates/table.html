@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Table - Brand</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          href="../static/css/font_family_Nunito.css" />
+    <link rel="stylesheet"
+          href="../static/css/disabeloption.css" />
+    <link rel="stylesheet" href="../static/fonts/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css" />
+    <link rel="stylesheet"
+          href="../static/fonts/fontawesome5-overrides.min.css" />
+    <style>
+        #alerts {
+            right: 20px;
+            top: 60px;
+            position: fixed;
+        }
+
+
+    </style>
+</head>
+<body id="page-top" class="disable_selected">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol id="tools_icon">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
+            <line x1="14.5" y1="5.5" x2="18.5" y2="9.5"></line>
+            <polyline points="12 8 7 3 3 7 8 12"></polyline>
+            <line x1="7" y1="8" x2="5.5" y2="9.5"></line>
+            <polyline points="16 12 21 17 17 21 12 16"></polyline>
+            <line x1="16" y1="17" x2="14.5" y2="18.5"></line>
+        </symbol>
+    </svg>
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <div class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+                     id="logo">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="1em"
+                             height="1em"
+                             fill="currentColor"
+                             viewBox="0 0 16 16"
+                             class="bi bi-vector-pen"
+                             style="transform: rotate(16deg); font-size: 20px">
+                            <path fill-rule="evenodd"
+                                  d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"></path>
+                        </svg>
+                    </div>
+                    <div class="sidebar-brand-text mx-3"><span>barmajino</span></div>
+                </div>
+                <hr class="sidebar-divider my-0" />
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item">
+                        <span class="nav-link" id="dashboard_link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></span>
+                    </li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item">
+                        <span class="nav-link active"><i class="fas fa-table"></i><span>Table</span></span>
+                    </li>
+                </ul>
+                <div class="text-center d-none d-md-inline">
+                    <button class="btn rounded-circle border-0"
+                            id="sidebarToggle"
+                            type="button"></button>
+                </div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid" style="padding-top: 15px">
+                    <div class="card shadow mb-3" style="padding-top: 0px">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">User Settings</p>
+                        </div>
+                        <div class="card-body">
+                            <form id="user_form">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="first_name"><strong>First Name</strong></label><input class="form-control"
+                                                                                                                                 onkeypress="on_typing()"
+                                                                                                                                 type="text"
+                                                                                                                                 id="first_name"
+                                                                                                                                 placeholder="Ali"
+                                                                                                                                 name="first_name" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="last_name"><strong>Last Name</strong></label><input class="form-control"
+                                                                                                                               onkeypress="on_typing()"
+                                                                                                                               type="text"
+                                                                                                                               id="last_name"
+                                                                                                                               placeholder="Jaafar"
+                                                                                                                               name="last_name" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="username"><strong>Username</strong></label><input class="form-control"
+                                                                                                                                 onkeypress="on_typing()"
+                                                                                                                                 type="text"
+                                                                                                                                 id="username"
+                                                                                                                                 placeholder="user.name"
+                                                                                                                                 name="username" />
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="email"><strong>Email Address</strong></label><input class="form-control"
+                                                                                                                                   onkeypress="on_typing()"
+                                                                                                                                   type="email"
+                                                                                                                                   id="email"
+                                                                                                                                   placeholder="user@example.com"
+                                                                                                                                   name="email" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="btn btn-primary btn-sm" type="button" id="add_user_btn" disabled>
+                                Add user
+                            </button>
+                            <!--<button class="btn btn-primary btn-sm" type="button" id="run_ali" >
+                                run
+                            </button>-->
+                            <button class="btn btn-success btn-circle ms-1" id="save_user_btn" role="button" style="display:none" disabled>
+                                <i class="fas fa-check text-white"></i>
+                            </button>
+                            <button class="btn btn-danger btn-circle ms-1" id="delete_user_btn" role="button" style="display:none" disabled>
+                                <i class="fas fa-trash text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">Users Info</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table mt-2"
+                                 id="dataTable"
+                                 role="grid"
+                                 aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: center">First name</th>
+                                            <th style="text-align: center">Last name</th>
+                                            <th style="text-align: center">Username</th>
+                                            <th style="text-align: center">Email</th>
+                                            <th style="text-align: center">Tools&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="max-height: 0px; border-width: 0px" id="user_tbody">
+                                        {% for i in user_table_data%}
+                                        <tr style="border-width: 0px" id="{{i[0]}}">
+                                            <td style="text-align: center">{{i[1]}}</td>
+                                            <td style="text-align: center">{{i[2]}}</td>
+                                            <td style="text-align: center">{{i[3]}}</td>
+                                            <td style="text-align: center">{{i[4]}}</td>
+                                            <td class="text-center" id="tools_{{i[0]}}" onclick="edit_row({{i[0]}})">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     width="1em"
+                                                     height="1em"
+                                                     viewBox="0 0 24 24"
+                                                     stroke-width="2"
+                                                     stroke="currentColor"
+                                                     fill="none"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round"
+                                                     class="icon icon-tabler icon-tabler-tools"
+                                                     style="font-size: 20px">
+                                                    <use xlink:href="#tools_icon"></use>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th style="text-align: center">First name</th>
+                                            <th style="text-align: center">Last name</th>
+                                            <th style="text-align: center">Username</th>
+                                            <th style="text-align: center">Email</th>
+                                            <th style="text-align: center">Tools&nbsp;</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alerts" class="d-xl-flex flex-column align-items-center"></div>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/script.min.js"></script>
+    <script src="../static/js/enspectdisable.js"></script>
+    <script src="../static/js/socket.io.js"></script>
+    <script src="../static/js/Barmajino-Alert-Tools-Js.js"></script>
+    <script>
+      (function init() {
+          var socket = io(window.location.host);
+
+         
+
+          run_ali = document.getElementById('run_ali');
+          run_ali.onclick = function () {
+              socket.emit('display_confirm_ali', "yes");
+          };
+
+          socket.on("yes_btn", function (payload) {
+              alerting("bg-primary", "text-white", "yes_btn", payload);
+          });
+
+          socket.on("no_btn", function (payload) {
+              alerting("bg-primary", "text-white", "no_btn", payload);
+          });
+
+        dashboard_link = document.getElementById("dashboard_link");
+        dashboard_link.onclick = function () {
+          socket.emit("page_update", "dashboard");
+            window.location.href = "{{url_for('home')}}";
+          };
+
+          logo = document.getElementById('logo');
+          logo.onclick = function () {
+              //socket.emit('func name',"message");
+          };
+
+          add_user_btn = document.getElementById("add_user_btn");
+          add_user_btn.onclick = function () {
+              form_ = document.getElementById('user_form');
+              sub_buton = document.getElementById('add_user_btn');
+              first_name = document.getElementById('first_name').value;
+              last_name = document.getElementById('last_name').value;
+              user_name = document.getElementById('username').value;
+              email = document.getElementById('email').value;
+              data = [first_name, last_name, user_name, email]
+              socket.emit("add_user_data", data);
+              form_.reset()
+              sub_buton.disabled = true;
+          };
+
+          socket.on("add_user_to_table", function (payload) {
+              create_new_row(payload[0], payload[1])
+          });
+
+          save_user_btn = document.getElementById("save_user_btn");
+          save_user_btn.onclick = function () {
+              delete_buton = document.getElementById('delete_user_btn');
+              form_ = document.getElementById('user_form');
+              sub_buton = document.getElementById('add_user_btn');
+              first_name = document.getElementById('first_name').value;
+              last_name = document.getElementById('last_name').value;
+              user_name = document.getElementById('username').value;
+              email = document.getElementById('email').value;
+              let user_id = save_user_btn.getAttribute('user_id');
+              data = [user_id, first_name, last_name, user_name, email]
+              socket.emit("update_user_data", data);
+              form_.reset()
+              sub_buton.disabled = true;
+              sub_buton.style.display = ''
+
+              save_user_btn.disabled = true;
+              save_user_btn.style.display = 'none'
+
+              delete_buton.disabled = true;
+              delete_buton.style.display = 'none'
+          };
+
+          socket.on("update_user_data_done", function (payload) {
+              let element_ = document.getElementById(payload[0])
+              let value_key = element_.getElementsByTagName("td")
+              for (i = 0; i < value_key.length-1; i++) {
+                  value_key[i].innerText = payload[i+1]
+              }
+          });
+
+          delete_user_btn = document.getElementById("delete_user_btn");
+          delete_user_btn.onclick = function () {
+              save_user_btn = document.getElementById('save_user_btn');
+              form_ = document.getElementById('user_form');
+              sub_buton = document.getElementById('add_user_btn');
+              let user_id = save_user_btn.getAttribute('user_id');
+              socket.emit("delete_user_data", user_id);
+              form_.reset()
+              sub_buton.disabled = true;
+              sub_buton.style.display = ''
+
+              save_user_btn.disabled = true;
+              save_user_btn.style.display = 'none'
+
+              delete_buton.disabled = true;
+              delete_buton.style.display = 'none'
+          };
+
+          socket.on("delete_user_data_done", function (payload) {
+              let element_ = document.getElementById(payload)
+              element_.remove()
+          });
+
+        })();
+
+
+        function edit_row(id) {
+            let element_ = document.getElementById(String(id))
+            let value_key = element_.getElementsByTagName("td")
+
+            document.getElementById('first_name').value = value_key[0].innerText;
+            document.getElementById('last_name').value = value_key[1].innerText;
+            document.getElementById('username').value = value_key[2].innerText;
+            document.getElementById('email').value = value_key[3].innerText;
+
+            sub_buton = document.getElementById('add_user_btn');
+            save_buton = document.getElementById('save_user_btn');
+            delete_buton = document.getElementById('delete_user_btn');
+
+            sub_buton.style.display = 'none'
+            sub_buton.disabled = true;
+
+            save_buton.style.display = ''
+            save_buton.disabled = false;
+            save_buton.setAttribute('user_id', id);
+
+            delete_buton.style.display = ''
+            delete_buton.disabled = false;
+            delete_buton.setAttribute('user_id', id);
+
+            //for (i = 0; i < value_key.length-1; i++) {
+            //    alert(value_key[i].innerText)
+            //}
+            //alert(id)
+        }
+        function on_typing() {
+            first_name = document.getElementById('first_name');
+            last_name = document.getElementById('last_name');
+            user_name = document.getElementById('username');
+            email = document.getElementById('email');
+            sub_buton = document.getElementById('add_user_btn');
+            if (first_name.value != "" && last_name.value != "" && user_name.value != "" && email.value != "") {
+                sub_buton.disabled = false;
+            } else {
+                sub_buton.disabled = true;
+            }
+        }
+
+        function create_new_row(id, data) {
+            // create <tr style="border-width: 0px" id="">
+            let tr = document.createElement('tr')
+            tr.setAttribute('style', 'border-width: 0px');
+            tr.setAttribute('id', id);
+            // end tr
+
+            // create td use for loop
+            for (var i = 0; i < data.length; i++) {
+                let td = document.createElement('td');
+                //<td style="text-align: center"></td>
+                td.setAttribute('style', "text-align: center");
+                td.innerText = data[i]
+                tr.appendChild(td)
+            }
+            // end td data
+
+            // create svg
+            let svg = document.createElement('svg');
+            svg.setAttribute('width', "1em");
+            svg.setAttribute('height', "1em");
+            svg.setAttribute('viewBox', "0 0 24 24");
+            svg.setAttribute('stroke-width', "2");
+            svg.setAttribute('stroke', "currentColor");
+            svg.setAttribute('fill', "none");
+            svg.setAttribute('stroke-linecap', "round");
+            svg.setAttribute('stroke-linejoin', "round");
+            svg.setAttribute('class', "icon icon-tabler icon-tabler-tools");
+            svg.setAttribute('style', "font-size: 20px");
+            // end avg
+
+            // create <use xlink:href="#tools_icon"></use>
+
+            let use_ = document.createElement('use');
+            use_.setAttribute('xlink:href', "#tools_icon");
+            svg.appendChild(use_)
+            // create td for icon <td class="text-center" id="" onclick="edit_row()">
+
+            let td = document.createElement('td');
+            td.setAttribute('class', "text-center");
+            td.setAttribute('id', id);
+            td.setAttribute('onclick', "edit_row(" + id + ")");
+            td.appendChild(svg)
+            tr.appendChild(td)
+            tr.innerHTML = tr.innerHTML;
+            document.getElementById('user_tbody').appendChild(tr)
+        }
+    </script>
+</body>
+</html>

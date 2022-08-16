@@ -1,0 +1,12 @@
+cryptography==3.4.7
+Flask==1.1.4
+Flask_Cors==3.0.10
+flask_ngrok==0.0.25
+Flask_SocketIO==4.3.1
+numpy
+psutil==5.8.0
+PyQt5==5.15.6
+requests==2.22.0
+screen_brightness_control==0.11.3
+python-socketio==4.6.0
+python-engineio==3.13.2
